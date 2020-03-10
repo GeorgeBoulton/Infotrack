@@ -5,11 +5,11 @@
 
 <h1>Find Hits</h1>
 
-<div class="searchBar"asp-action="RetrieveRanks" asp-controller="Search">
-    <form>
+<div class="searchBar">
+    <form method="post" asp-action="Index" asp-controller="Search">
         <input type="text" name = "Keywords" placeholder="Search Terms">
         <input type="text" name="FilterUrl" placeholder="URL">
-        <input type="submit"/>
+        <input type="submit" value="RetrieveResults"/>
     </form>
     
     <h2>@ViewData["Results"]</h2>

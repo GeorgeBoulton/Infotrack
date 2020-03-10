@@ -23,12 +23,11 @@ namespace Infotrack.Controllers
         // GET: /<controller>/
         public async Task<IActionResult> Index()
         {
-            ViewData["Results"] = await this.googleReader.GetResults("https://google.com/search?num=100&q=land+registry+search", "infotrack.co.uk");
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> RetrieveResults(string keywords, string filterUrl)
+        public async Task<IActionResult> Index(string keywords, string filterUrl)
         {
             var searchRequest = new SearchRequest
             {
