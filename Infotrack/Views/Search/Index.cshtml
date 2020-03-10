@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Find Hits</h1>
+
+<div class="searchBar"asp-action="RetrieveRanks" asp-controller="Search">
+    <form>
+        <input type="text" name = "Keywords" placeholder="Search Terms">
+        <input type="text" name="FilterUrl" placeholder="URL">
+        <input type="submit"/>
+    </form>
+    
+    <h2>@ViewData["Results"]</h2>
+</div>
