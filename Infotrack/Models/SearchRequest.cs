@@ -2,12 +2,15 @@
 {
     public class SearchRequest
     {
-        public string Keywords { get; set; }
-        public string SearchUrl { get; set; } = "https://google.com/search?num=100&q=";
+        private const string SearchUrl = "https://google.com/search?num=100&q=";
 
-        public string FormatTerms()
+        public string Keywords { get; set; }
+
+        public string FilterUrl { get; set; }
+
+        public string GetQueryUrl()
         {
-            return $"{this.SearchUrl}{Keywords.Replace(" ", "+")}";
+            return $"{SearchUrl}{Keywords.Replace(" ", "+")}";
         }
     }
 }
