@@ -1,25 +1,27 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Find Search Rankings";
     @model SearchRequest;
 }
 
-<h1>Find Hits</h1>
+<div class="searchPage">
+    <h1>Find Search Rankings</h1>
+    <p>Enter a search term and a filter URL to find out where the filter URL appears in the top 100 search results.</p>
 
-<div class="searchBar">
-    <form method="post" asp-action="Index" asp-controller="Search">
-        <input asp-for="Keywords" type="text" name="Keywords" placeholder="Search Terms">
+
+    <form class="searchForm" method="post" asp-action="Index" asp-controller="Search">
+        <input asp-for="Keywords" type="text" name="Keywords" placeholder="Search Term">
         <br />
-        <span asp-validation-for="Keywords"></span>
+        <span class="errorMessage" asp-validation-for="Keywords"></span>
         <br />
 
         <input asp-for="FilterUrl" type="text" name="FilterUrl" placeholder="URL">
         <br />
-        <span asp-validation-for="FilterUrl"></span>
+        <span class="errorMessage" asp-validation-for="FilterUrl"></span>
         <br />
 
-        <input type="submit" value="Search" />
+        <input class="submit" type="submit" value="Search" />
     </form>
-    
-    <h2>@ViewData["Results"]</h2>
+
+    <p class="result">Located at positions: @ViewData["Results"]</p>
 </div>
