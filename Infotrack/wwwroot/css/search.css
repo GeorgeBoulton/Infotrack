@@ -1,0 +1,27 @@
+﻿/*#region text*/
+.errorMessage {
+    color: red;
+    font-size: 12px;
+}
+
+.result {
+    padding-top: 20px;
+    font-size: 20px;
+}
+/*#endregion text*/
+
+/*#region form*/
+.searchForm {
+    width: 300px;
+    text-align: right;
+}
+
+.submit {
+    width: 70%;
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+}
+/*#endregion form*/
