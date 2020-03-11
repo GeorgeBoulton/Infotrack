@@ -1,15 +1,24 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
+    @model SearchRequest;
 }
 
 <h1>Find Hits</h1>
 
 <div class="searchBar">
     <form method="post" asp-action="Index" asp-controller="Search">
-        <input type="text" name = "Keywords" placeholder="Search Terms">
-        <input type="text" name="FilterUrl" placeholder="URL">
-        <input type="submit" value="RetrieveResults"/>
+        <input asp-for="Keywords" type="text" name="Keywords" placeholder="Search Terms">
+        <br />
+        <span asp-validation-for="Keywords"></span>
+        <br />
+
+        <input asp-for="FilterUrl" type="text" name="FilterUrl" placeholder="URL">
+        <br />
+        <span asp-validation-for="FilterUrl"></span>
+        <br />
+
+        <input type="submit" value="Search" />
     </form>
     
     <h2>@ViewData["Results"]</h2>
